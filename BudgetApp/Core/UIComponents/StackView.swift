@@ -1,17 +1,16 @@
 //
-//  VerticalStackView.swift
+//  StackView.swift
 //  BudgetApp
 //
-//  Created by Sameer  on 20/08/25.
+//  Created by Sameer  on 21/08/25.
 //
 
 import UIKit
 
-class VerticalStackView: UIStackView {
-    init(margins: NSDirectionalEdgeInsets) {
+class StackView: UIStackView {
+    init(axis: NSLayoutConstraint.Axis = .vertical ,margins: NSDirectionalEdgeInsets) {
         super.init(frame: .zero)
-        
-        self.axis = .vertical
+        self.axis = axis
         self.spacing = UIStackView.spacingUseSystem
         self.isLayoutMarginsRelativeArrangement = true
         self.directionalLayoutMargins = margins

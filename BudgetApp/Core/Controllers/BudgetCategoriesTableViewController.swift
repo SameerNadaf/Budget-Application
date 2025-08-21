@@ -37,7 +37,7 @@ class BudgetCategoriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BudgetTableViewCell")
+        tableView.register(BudgetTableViewCell.self, forCellReuseIdentifier: "BudgetTableViewCell")
     }
     
     @objc func showAddBudgetCategory(_ sender: UIBarButtonItem) {
@@ -47,7 +47,7 @@ class BudgetCategoriesTableViewController: UITableViewController {
     
     private func setupUI() {
         
-        let addBudgetCategoryButton = UIBarButtonItem(title: "Add Category", style: .done, target: self, action: #selector(showAddBudgetCategory))
+        let addBudgetCategoryButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(showAddBudgetCategory))
         self.navigationItem.rightBarButtonItem = addBudgetCategoryButton
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Budget"
@@ -63,16 +63,43 @@ class BudgetCategoriesTableViewController: UITableViewController {
         navigationController?.pushViewController(BudgetDetailViewController(budgetCategory: budgetCategory, persistentContainer: persistentContainer), animated: true)
     }
     
+    private func deleteBudgetCategory(_ budgetCategory: BudgetCategory) {
+        persistentContainer.viewContext.delete(budgetCategory)
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            showAlert(message: "Unable to delete budget category")
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let budgetCategory = fetchedResultsController.object(at: indexPath)
+            deleteBudgetCategory(budgetCategory)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10 // spacing above section
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10 // spacing below section
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetTableViewCell", for: indexPath) as? BudgetTableViewCell else {
+            return BudgetTableViewCell(style: .default, reuseIdentifier: "BudgetTableViewCell")
+        }
+        
         cell.accessoryType = .disclosureIndicator
         let budgetCategory = fetchedResultsController.object(at: indexPath)
-        
-        var configuration = cell.defaultContentConfiguration()
-        configuration.text = budgetCategory.name
-        cell.contentConfiguration = configuration
-        
+        cell.configure(budgetCategory)
         return cell
     }
 
