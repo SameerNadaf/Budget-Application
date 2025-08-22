@@ -30,22 +30,18 @@ An iOS app built with **UIKit** and **Core Data**, BudgetApp helps you create ca
 ## 📸 Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="Screenshots/launchScreen.png" alt="Launch Screen" width="300"/>
-  <img src="Screenshots/mapView.png" alt="Map View" width="300"/>
+  <img src="ScreenShots/launchScreen.png" alt="Launch Screen" width="300"/>
+  <img src="ScreenShots/homeScreen.png" alt="Home Screen" width="300"/>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="Screenshots/satelliteView.png" alt="Satellite View" width="300"/>
-  <img src="Screenshots/searchResult.png" alt="Search Result" width="300"/>
+  <img src="ScreenShots/addBudget.png" alt="Add Budget Category" width="300"/>
+  <img src="ScreenShots/deleteCategory.png" alt="Delete Budget Category" width="300"/>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="Screenshots/detailedView.png" alt="Detailed View" width="300"/>
-  <img src="Screenshots/annotations.png" alt="Annotations" width="300"/>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="Screenshots/directions.png" alt="Directions" width="300"/>
+  <img src="ScreenShots/addTransaction.png" alt="Add Transaction" width="300"/>
+  <img src="ScreenShots/deleteTransaction.png" alt="Delete Transaction" width="300"/>
 </div>
 
 ---
