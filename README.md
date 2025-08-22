@@ -122,7 +122,7 @@ An iOS app built with **UIKit** and **Core Data**, BudgetApp helps you create ca
 Clone the repository:
 
 ```bash
-git clone https://github.com/SameerNadaf/BudgetApp.git
+git clone https://github.com/SameerNadaf/Budget-Application.git
 cd BudgetApp
 ```
 
