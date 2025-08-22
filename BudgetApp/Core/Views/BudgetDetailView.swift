@@ -11,7 +11,7 @@ final class BudgetDetailView: UIView {
     
     // MARK: - UI Components
     let nameTextField = TextFieldView(placeholder: "Transaction name")
-    let amountTextField = TextFieldView(placeholder: "Transaction amount")
+    let amountTextField = TextFieldView(placeholder: "Transaction amount", keyBoardType: .decimalPad)
     let saveTransactionButton = PrimaryButton(title: "Save Transaction")
     let amountLabel = LabelView(text: "")
     let transactionTotal = LabelView(text: "", alignment: .center)

@@ -21,6 +21,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		427638792E584B20000E6DE3 /* ScreenShots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ScreenShots;
+			sourceTree = "<group>";
+		};
 		4280FA082E55CD30001181D2 /* BudgetApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -45,6 +50,7 @@
 		4280F9FD2E55CD30001181D2 = {
 			isa = PBXGroup;
 			children = (
+				427638792E584B20000E6DE3 /* ScreenShots */,
 				4280FA082E55CD30001181D2 /* BudgetApp */,
 				4280FA072E55CD30001181D2 /* Products */,
 			);
@@ -74,6 +80,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				427638792E584B20000E6DE3 /* ScreenShots */,
 				4280FA082E55CD30001181D2 /* BudgetApp */,
 			);
 			name = BudgetApp;

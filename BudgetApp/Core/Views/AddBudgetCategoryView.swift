@@ -11,7 +11,7 @@ import UIKit
 class AddBudgetCategoryView: UIView {
     
     let nameTextField = TextFieldView(placeholder: "Budget name")
-    let amountTextField = TextFieldView(placeholder: "Budget amount")
+    let amountTextField = TextFieldView(placeholder: "Budget amount", keyBoardType: .decimalPad)
     let addBudgetButton = PrimaryButton(title: "Save")
     private let stackView = StackView(margins: NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
     
